@@ -1,4 +1,6 @@
-from urllib.parse import urlparse
+from future.standard_library import hooks
+with hooks():
+    from urllib.parse import urlparse
 
 import caniusepython3 as ciu
 

@@ -15,9 +15,9 @@ Goal 1:
 -------
 write a script that takes a package name as an argument and does this:
 
-1. Py3?: Examines whether it already has the Python 3 (or 3.3 or 3.4) trove classifier. If so, exit.
+1. Py3?: Examines whether it already has the Python 3 (or 3.3 or 3.4) trove classifier. If so, exit. DONE in ``tests/test_package.py`` (Chee Ming). TODO: modularize, refactor
 
-2. GitHub?: Examines whether there is a github link on the PyPI page. If not, exit.
+2. GitHub?: Examines whether there is a github link on the PyPI page. If not, exit. DONE in ``tests/test_package.py``. TODO: modularize, refactor
 
 3. Env: Creates a virtualenv for the package
 
@@ -61,8 +61,10 @@ This has routines we can use to extract Trove classifiers (whether a package sup
 - futurize: http://python-future.org:
 ```
     $ pip install future
-    $ futurize --stage1 *.py
+    $ futurize --stage1 **/*.py
 ```
+with recursive globbing (default in ``zsh``, or in ``bash`` with ``shopt -s globstar`` set).
+
 - Miniconda Python distribution (Ed's recommendation for easily creating side-by-side Py2 and Py3 environments): http://conda.pydata.org/miniconda.html
 
 
