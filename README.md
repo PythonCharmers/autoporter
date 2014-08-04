@@ -5,9 +5,11 @@ Tool to automate porting of Python 2-only packages to both Python 2&amp;3 and se
 
 https://github.com/PythonCharmers/autoporter
 
+
 Vision:
 -------
 Automate porting of Py2 packages to Py3 while preserving compatibility with Py2.
+
 
 Goal 1:
 -------
@@ -44,21 +46,7 @@ We can run this from e.g. an EC2 or Digital Ocean instance that has an SSD disk 
 People:
 -------
 
-- Ed Schofield <ed@pythoncharmers.com> (@edschofield)
-
-- Ben Clews <bennett.clews@gmail.com> (@bennett_clews)
-
-- James Berry <jmsbrry@gmail.com>
-
-- Charles Prosper <charles_prosper@hotmail.com>
-
-- Kevin Chen <mr.kevin.chen811@gmail.com>
-
-- Simon Quach <simon.quach@butterfly.com.au>
-
-- Luoxi Pan <l.panpax@gmail.com>
-
-- Chee Ming <cheeming@gmail.com> (@cheeming)
+see docs/CONTRIBUTORS.rst
 
 
 Tools:
