@@ -19,9 +19,10 @@ def main():
         package_data = client.package_data(project, version)
 
         classifiers = package_data['classifiers']
-        if 'Programming Language :: Python :: 3' in classifiers:
-            print('py3 OK')
-            sys.exit(0)
+        for classifier in classifiers:
+            if 'Programming Language :: Python :: 3' in classifier:
+                print('py3 OK')
+                sys.exit(0)
 
         r = urlparse(package_data['home_page'])
         if r.netloc == 'github.com':
