@@ -27,7 +27,7 @@ write a script that takes a package name as an argument and does this:
 
 7. Commit: Commits the changes locally
 
-8. Test: If the package has a test suite, try running it with ¿python setup.py test¿.
+8. Test: If the package has a test suite, try running it with ``python setup.py test``.
 
 8. Push: Pushes the changes to the new GitHub repo
 
@@ -53,6 +53,8 @@ People:
 - Charles Prosper <charles_prosper@hotmail.com>
 
 - Kevin Chen <mr.kevin.chen811@gmail.com>
+
+- Simon Quach <simon.quach@butterfly.com.au>
 
 
 Tools:
