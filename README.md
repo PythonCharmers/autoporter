@@ -68,6 +68,13 @@ with recursive globbing (default in ``zsh``, or in ``bash`` with ``shopt -s glob
 - Miniconda Python distribution (Ed's recommendation for easily creating side-by-side Py2 and Py3 environments): http://conda.pydata.org/miniconda.html
 
 
+Tests:
+------
+To run tests for the autoporter code base:
+```bash
+    python -m unittest discover -v tests
+```
+
 Notes:
 ------
 
