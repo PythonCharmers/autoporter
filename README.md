@@ -31,7 +31,7 @@ write a script that takes a package name as an argument and does this:
 
 8. Push: Pushes the changes to the new GitHub repo
 
-9. PR: Sends a pull request (marked ¿Work In Progress¿) upstream
+9. PR: Sends a pull request (marked "Work In Progress") upstream
 
 
 Goal 2:
@@ -44,15 +44,15 @@ We can run this from e.g. an EC2 or Digital Ocean instance that has an SSD disk 
 People:
 -------
 
-- Ed Schofield (ed@pythoncharmers.com, @edschofield)
+- Ed Schofield <ed@pythoncharmers.com> (@edschofield)
 
-- Ben Clews (bennett.clews@gmail.com, @bennett_clews)
+- Ben Clews <bennett.clews@gmail.com> (@bennett_clews)
 
-- James Berry jmsbrry@gmail.com
+- James Berry <jmsbrry@gmail.com>
 
-- Charles Prosper charles_prosper@hotmail.com
+- Charles Prosper <charles_prosper@hotmail.com>
 
-- Kevin Chen mr.kevin.chen811@gmail.com
+- Kevin Chen <mr.kevin.chen811@gmail.com>
 
 
 Tools:
@@ -64,12 +64,12 @@ Tools:
 
 This has routines we can use to extract Trove classifiers (whether a package supports Py3 etc.)
 
-- futurize: http://python-future.org::
-
+- futurize: http://python-future.org:
+```
     $ pip install future
     $ futurize --stage1 *.py
-
-- Anaconda Python distribution (Ed¿s recommendation for easily creating side-by-side Py2 and Py3 environments): https://store.continuum.io/cshop/anaconda/
+```
+- Miniconda Python distribution (Ed's recommendation for easily creating side-by-side Py2 and Py3 environments): http://conda.pydata.org/miniconda.html
 
 
 Notes:
