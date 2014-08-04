@@ -60,7 +60,7 @@ def main():
 
     # check if there is github page
     github_url = get_package_github_url(package_data)
-    if github_url is not None:
+    if github_url is None:
         print('github NOT FOUND')
         sys.exit(0)
 
