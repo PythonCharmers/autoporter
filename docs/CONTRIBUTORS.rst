@@ -9,7 +9,7 @@ People:
 
 - Charles Prosper <charles_prosper@hotmail.com>
 
-- Kevin Chen <mr.kevin.chen811@gmail.com>
+- Kevin Chen <mr.kevin.chen85@gmail.com>
 
 - Simon Quach <simon.quach@butterfly.com.au>
 
