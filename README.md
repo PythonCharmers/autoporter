@@ -56,6 +56,10 @@ People:
 
 - Simon Quach <simon.quach@butterfly.com.au>
 
+- Luoxi Pan <l.panpax@gmail.com>
+
+- Chee Ming <cheeming@gmail.com> (@cheeming)
+
 
 Tools:
 ------
