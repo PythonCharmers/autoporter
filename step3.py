@@ -1,0 +1,12 @@
+(lp0
+S'https://github.com/FedericoCeratto/shoebill'
+p1
+aS'http://hubspot.github.com/sanetime/'
+p2
+aS'https://github.com/tylerlong/quick_orm'
+p3
+aS'https://github.com/trilan/snippets'
+p4
+aS'https://github.com/Kami/django-encrypted-settings'
+p5
+a.
