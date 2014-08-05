@@ -31,10 +31,10 @@ class pypi_scanner(object):
         return list_of_package_names
 
     def _get_all_python_packages(self):
-        c = classifier_finder('Programming Language :: Python')
-        python_classifiers = c.get_classifiers()
+        with ciu.pypi.pypi_client() as client:
+            list_of_package_names = client.list_packages()
 
-        return self._browse_classifier()
+        return list_of_package_names
 
     def _get_all_python3_packages(self):
         c = classifier_finder('Programming Language :: Python :: 3')
