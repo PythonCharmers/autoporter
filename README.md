@@ -72,7 +72,7 @@ Tests:
 ------
 To run tests for the autoporter code base:
 ```bash
-    python -m unittest discover -v tests
+python -m unittest discover -v tests
 ```
 
 Notes:
