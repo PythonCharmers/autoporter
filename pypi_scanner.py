@@ -5,7 +5,7 @@ from __future__ import (absolute_import, division,
 import caniusepython3 as ciu
 
 from . import utils
-from . import classifier_finder.py
+from . import classifier_finder
 
 
 class pypi_scanner(object):
