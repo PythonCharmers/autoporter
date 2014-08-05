@@ -42,7 +42,7 @@ class pypi_scanner(object):
 
         return self._browse_classifier()
 
-    def get_python2_only_packages(self):
+    def _get_python2_only_packages(self):
         """
         returns a list of all PyPI packages that
         is python 2 compatible only.
@@ -56,7 +56,7 @@ class pypi_scanner(object):
         """
         returns a list of python 2 only packages with github repos
         """
-        python2_only_packages = set(self.get_python2_only_packages())
+        python2_only_packages = set(self._get_python2_only_packages())
         github_packages = set(self._get_all_github_packages())
         python2_github_packages = python2_only_packages.intersection(github_packages)
         return list(python2_github_packages)
