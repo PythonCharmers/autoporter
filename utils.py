@@ -12,7 +12,7 @@ def get_pypi_package_data(name):
         releases = client.package_releases(name)
         if not releases:
             return None
-        # just take the first one, for now
+        # at the moment the function only returns the latest version
         version = releases[0]
         return client.package_data(name, version)
 
