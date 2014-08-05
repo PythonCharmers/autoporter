@@ -1,5 +1,9 @@
 import unittest
 
+from future.standard_library import hooks
+with hooks():
+    from unittest.mock import patch, MagicMock
+
 from utils import get_pypi_package_data, is_package_support_py3, \
     get_package_github_url
 
@@ -23,10 +27,7 @@ class TestPackageData(unittest.TestCase):
             True)
 
     def test_get_package_github_url(self):
-        self.assertEqual(get_package_github_url(
-            {'home_page': 'http://www.google.com'}),
-            None)
-
+        # github url found in pypi package data
         self.assertEqual(get_package_github_url(
             {'home_page': 'https://github.com/PythonCharmers/autoporter'}),
             'https://github.com/PythonCharmers/autoporter')
@@ -34,6 +35,31 @@ class TestPackageData(unittest.TestCase):
         self.assertEqual(get_package_github_url(
             {'home_page': 'http://github.com/PythonCharmers/autoporter'}),
             'http://github.com/PythonCharmers/autoporter')
+
+        # github url not found, so check home_page
+        urlopen = self.get_mock_urlopen('<html><a href="">abc</a><a>123</a><a href="http://www.google.com/about">ga</a></html>')
+        with patch('utils.urlopen', MagicMock(return_value=urlopen)):
+            self.assertEqual(get_package_github_url(
+                {'home_page': 'http://www.google.com'}),
+                None)
+
+        urlopen = self.get_mock_urlopen('<html><a href="/about">abc</a><a href="https://github.com/PythonCharmers/autoporter">123</a></html>')
+        with patch('utils.urlopen', MagicMock(return_value=urlopen)):
+            self.assertEqual(get_package_github_url(
+                {'home_page': 'http://www.google.com'}),
+                'https://github.com/PythonCharmers/autoporter')
+
+        urlopen = self.get_mock_urlopen('<html><a href="https://github.com/1/a">1a</a><a href="https://github.com/1/b">1b</a></html>')
+        with patch('utils.urlopen', MagicMock(return_value=urlopen)):
+            self.assertEqual(get_package_github_url(
+                {'home_page': 'http://www.google.com'}),
+                'https://github.com/1/a')
+
+    def get_mock_urlopen(self, html):
+        urlopen = MagicMock()
+        urlopen.read = MagicMock()
+        urlopen.read.return_value = html
+        return urlopen
 
 
 def main():
