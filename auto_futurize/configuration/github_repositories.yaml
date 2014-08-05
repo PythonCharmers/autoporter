@@ -1,0 +1,3 @@
+repositories:
+    - owner: lihaoyi
+      name: macropy
