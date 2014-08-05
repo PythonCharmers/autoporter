@@ -35,7 +35,7 @@ class classifier_finder(object):
     def __init__(self,  base_classifier):
         self.base_classifier = base_classifier
 
-    def _get_classifier(self):
+    def get_classifiers(self):
         """Fetch specified classifiers."""
         url = 'https://pypi.python.org/pypi?%3Aaction=list_classifiers'
         response = urllib_request.urlopen(url)
