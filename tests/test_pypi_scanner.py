@@ -35,6 +35,21 @@ class Test_pypi_scanner(unittest.TestCase):
         support_py3 = utils.is_package_support_py3(package_data)
         self.assertTrue(support_py3)
 
+    # def __
+
+    # def test_get_python2_only_packages(self):
+    #     with patch.object(self.iut, '_get_all_python_packages') as mock_method1:
+    #         mock_method1.side_effect = 
+
+    def test_get_all_python3_packages(self):
+        expected_return_value = ['pk1','pk2']
+
+        with patch.object(self.iut, '_browse_classifier') as mock_browse_classifier:
+            mock_browse_classifier.return_value = expected_return_value
+            list_of_package_names = self.iut._get_all_python3_packages()
+
+            mock_browse_classifier.assert_called_once()
+            self.assertEqual(expected_return_value, list_of_package_names)
 
 if __name__ == '__main__':
     unittest.main()

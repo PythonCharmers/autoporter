@@ -37,12 +37,12 @@ class pypi_scanner(object):
         return list_of_package_names
 
     def _get_all_python3_packages(self):
-        c = classifier_finder('Programming Language :: Python :: 3')
+        c = classifier_finder.classifier_finder('Programming Language :: Python :: 3')
         python_classifiers = c.get_classifiers()
 
-        return self._browse_classifier()
+        return self._browse_classifier(python_classifiers)
 
-    def get_python2_only_packages(self):
+    def _get_python2_only_packages(self):
         """
         returns a list of all PyPI packages that
         is python 2 compatible only.
@@ -56,7 +56,7 @@ class pypi_scanner(object):
         """
         returns a list of python 2 only packages with github repos
         """
-        python2_only_packages = set(self.get_python2_only_packages())
+        python2_only_packages = set(self._get_python2_only_packages())
         github_packages = set(self._get_all_github_packages())
         python2_github_packages = python2_only_packages.intersection(github_packages)
         return list(python2_github_packages)
