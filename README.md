@@ -15,9 +15,9 @@ Goal 1:
 -------
 write a script that takes a package name as an argument and does this:
 
-1. Py3?: Examines whether it already has the Python 3 (or 3.3 or 3.4) trove classifier. If so, exit. DONE in ``tests/test_package.py`` (Chee Ming). TODO: modularize, refactor
+1. Py3?: Examines whether it already has the Python 3 (or 3.3 or 3.4) trove classifier. If so, exit. DONE in ``tests/test_package.py`` (Chee Ming).
 
-2. GitHub?: Examines whether there is a github link on the PyPI page. If not, exit. DONE in ``tests/test_package.py``. TODO: modularize, refactor
+2. GitHub?: Examines whether there is a github link on the PyPI page. If not, exit. DONE in ``tests/test_package.py``.
 
 3. Env: Creates a virtualenv for the package
 
