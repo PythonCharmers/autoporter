@@ -37,10 +37,10 @@ class pypi_scanner(object):
         return list_of_package_names
 
     def _get_all_python3_packages(self):
-        c = classifier_finder('Programming Language :: Python :: 3')
+        c = classifier_finder.classifier_finder('Programming Language :: Python :: 3')
         python_classifiers = c.get_classifiers()
 
-        return self._browse_classifier()
+        return self._browse_classifier(python_classifiers)
 
     def _get_python2_only_packages(self):
         """

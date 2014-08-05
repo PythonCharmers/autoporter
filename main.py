@@ -7,6 +7,7 @@ from . import pypi_scanner
 def main():
 	scanner = pypi_scanner.pypi_scanner()
 	github_packages = scanner.get_python2_github_packages()
+	print("github_packages", github_packages)
 
 if __name__ == '__main__':
 	main()
