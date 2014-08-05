@@ -1,7 +1,9 @@
+from bs4 import BeautifulSoup
 import caniusepython3 as ciu
 from future.standard_library import hooks
 with hooks():
     from urllib.parse import urlparse
+    from urllib.request import urlopen
 
 
 def get_pypi_package_data(name):
@@ -24,7 +26,18 @@ def is_package_support_py3(package_data):
 
 
 def get_package_github_url(package_data):
-    r = urlparse(package_data['home_page'])
+    url = package_data['home_page']
+    r = urlparse(url)
     if r.netloc == 'github.com':
-        return package_data['home_page']
+        return url
+    else:
+        # try to scrape the home page to get the github link
+        html = urlopen(url).read()
+        soup = BeautifulSoup(html)
+        links = list(filter(lambda y: urlparse(y).netloc == 'github.com',
+                            [link.get('href', '').strip()
+                             for link in soup.find_all('a')]))
+        if links:
+            # just return the first github link
+            return links[0]
     return None
